@@ -8,7 +8,7 @@ def count_days_from_meeting():
 
 
 def count_days_from_offer():
-    first_day = datetime.date(2017, 6, 21)
+    first_day = datetime.date(2017, 6, 20)
     today = datetime.date.today()
     delta = today - first_day
     return(delta.days)
