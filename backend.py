@@ -77,6 +77,7 @@ def handle_updates(updates):
 			elif text.lower() == "мы встречаемся уже...":
 				days = count_days_from_offer()
 				years = days // 365
+				ost = days - years * 365
 				if years < 1:
 					send_message("...*{} дней*. А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше!".format(days),
 								 chat, main_keyboard)
@@ -84,11 +85,11 @@ def handle_updates(updates):
 					send_message("...*{} дней*, или *целый ГОДИК*! Это особенный день, {}! Я благодарен тебе за каждую секунду, что мы вместе!".format(days,
 								 random.choice(names)), chat, main_keyboard)
 				elif years == 1:
-					send_message("...*{} дней*, или *целый годик и {} дней*! А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше, {}!".format(days,
-								 (days - years * 365), random.choice(names)), chat, main_keyboard)
+					send_message("...*{} дней*, или *целый годик и {} {}*! А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше, {}!".format(days,
+								 ost, numbers[ost[len(ost)-1:len(ost)]], random.choice(names)), chat, main_keyboard)
 				else:
 					send_message("...*{} дней*, или *{} года и {} дней*! Мы с тобой уже так долго вместе, {}. Спасибо тебе за то, что ты есть!".format(days,
-							     years,(days - years * 365), random.choice(names)), chat, main_keyboard)
+							     years, ost, random.choice(names)), chat, main_keyboard)
 
 			elif text.lower() == "почему я тебя люблю?":
 				send_message('Потому что *{}*'.format(random.choice(reasons)), chat, main_keyboard)
