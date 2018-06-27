@@ -86,7 +86,7 @@ def handle_updates(updates):
 								 random.choice(names)), chat, main_keyboard)
 				elif years == 1:
 					send_message("...*{} дней*, или *целый годик и {} {}*! А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше, {}!".format(days,
-								 ost, numbers[ost[len(str(ost))-1:len(str(ost))]], random.choice(names)), chat, main_keyboard)
+								 ost, numbers[str(ost)[len(str(ost))-1:len(str(ost))]], random.choice(names)), chat, main_keyboard)
 				else:
 					send_message("...*{} дней*, или *{} года и {} дней*! Мы с тобой уже так долго вместе, {}. Спасибо тебе за то, что ты есть!".format(days,
 							     years, ost, random.choice(names)), chat, main_keyboard)
