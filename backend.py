@@ -67,12 +67,12 @@ def handle_updates(updates):
 					send_message("...*{} дней* назад".format(days), chat,
 								 main_keyboard)
 				elif years == 1:
-					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])]), chat,
+					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(ost, numbers[int(str(ost)[len(str(ost))-1:])], chat,
 								 main_keyboard)
 					#рандом
 					#send_message("...*1 год* и *{} дней* назад. Ты все еще помнишь тот наш ночной разговор?".format(days - 365), chat,main_keyboard)
 				else:
-					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])] ), chat,
+					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, ost, numbers[int(str(ost)[len(str(ost))-1:])], chat,
 								 main_keyboard)
 
 			elif text.lower() == "мы встречаемся уже...":
@@ -86,11 +86,11 @@ def handle_updates(updates):
 					send_message("...*{} дней*, или *целый ГОДИК*! Это особенный день, {}! Я благодарен тебе за каждую секунду, что мы вместе!".format(days,
 								 random.choice(names)), chat, main_keyboard)
 				elif years == 1:
-					send_message("...*{} дней*, или *целый годик и {} {}*! А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше, {}!".format(days,
-								 ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])], random.choice(names)), chat, main_keyboard)
+					send_message("...*{} {}*, или *целый годик и {} {}*! А ведь ты только представь: с каждым днем я люблю тебя всё больше и больше, {}!".format(days, numbers[ int(str(days)[len(str(days))-1:]) ],
+								 ost, numbers[int(str(ost)[len(str(ost))-1:])], random.choice(names)), chat, main_keyboard)
 				else:
-					send_message("...*{} дней*, или *{} года и {} {}*! Мы с тобой уже так долго вместе, {}. Спасибо тебе за то, что ты есть!".format(days,
-							     years, ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])], random.choice(names)), chat, main_keyboard)
+					send_message("...*{} {}*, или *{} года и {} {}*! Мы с тобой уже так долго вместе, {}. Спасибо тебе за то, что ты есть!".format(days, numbers[ int(str(days)[len(str(days))-1:]) ],
+							     years, ost, numbers[int(str(ost)[len(str(ost))-1:])], random.choice(names)), chat, main_keyboard)
 
 			elif text.lower() == "почему я тебя люблю?":
 				send_message('Потому что *{}*'.format(random.choice(reasons)), chat, main_keyboard)
