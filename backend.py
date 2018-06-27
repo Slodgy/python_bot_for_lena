@@ -62,16 +62,17 @@ def handle_updates(updates):
 			elif text.lower() == "наша первая встреча была...":
 				days = count_days_from_meeting()
 				years = days // 365
+				ost = days - years * 365
 				if years < 1:
 					send_message("...*{} дней* назад".format(days), chat,
 								 main_keyboard)
 				elif years == 1:
-					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(days - 365, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])]), chat,
+					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])]), chat,
 								 main_keyboard)
 					#рандом
 					#send_message("...*1 год* и *{} дней* назад. Ты все еще помнишь тот наш ночной разговор?".format(days - 365), chat,main_keyboard)
 				else:
-					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, (days - years * 365), numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])] ), chat,
+					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, ost, numbers[int(str(ost)[len(str(ost))-1:len(str(ost))])] ), chat,
 								 main_keyboard)
 
 			elif text.lower() == "мы встречаемся уже...":
