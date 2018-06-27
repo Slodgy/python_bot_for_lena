@@ -48,6 +48,7 @@ def handle_updates(updates):
 	for update in updates["result"]:
 		chat = update["message"]["chat"]["id"]
 		main_keyboard = main_menu_keyboard()
+		print("Котёнок воспользовался ботом! Уряяя!")
 		try:
 			text = update["message"]["text"]
 
@@ -67,12 +68,12 @@ def handle_updates(updates):
 					send_message("...*{} дней* назад".format(days), chat,
 								 main_keyboard)
 				elif years == 1:
-					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(ost, numbers[int(str(ost)[len(str(ost))-1:])], chat,
+					send_message("...*1 год* и *{} {}* назад. Время летит так быстро, не правда ли?".format(ost, numbers[int(str(ost)[len(str(ost))-1:])]), chat,
 								 main_keyboard)
 					#рандом
 					#send_message("...*1 год* и *{} дней* назад. Ты все еще помнишь тот наш ночной разговор?".format(days - 365), chat,main_keyboard)
 				else:
-					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, ost, numbers[int(str(ost)[len(str(ost))-1:])], chat,
+					send_message("...*{} года* и *{} {}* назад. Время летит так быстро, не правда ли?".format( years, ost, numbers[ int(str(ost)[len(str(ost))-1:]) ]), chat,
 								 main_keyboard)
 
 			elif text.lower() == "мы встречаемся уже...":
