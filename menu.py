@@ -4,6 +4,7 @@ def count_days_from_meeting():
     first_day = datetime.datetime(2017, 6, 2, 17)
     today = datetime.datetime.now()
     delta = today - first_day
+    print(datetime.datetime.now())
     return(delta.days)
 
 
